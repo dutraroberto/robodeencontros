@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Montserrat-Regular' ;
+    src: url('../../files/Montserrat-Regular.ttf');
+}
+@font-face {
+    font-family: 'Montserrat-bold' ;
+    src: url('../../files/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto-Regular' ;
+    src: url('../../files/Roboto-Regular.ttf')
+}

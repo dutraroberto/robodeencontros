@@ -1,0 +1,118 @@
+.headline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 50px 0;
+    width: 100%;
+    display: none;
+}
+
+
+.headline img {
+    max-width: 20%;
+    height: auto;
+    margin: 20px 0 0;
+    display: none;
+}
+
+.headline h2 {
+    font-family: var(--bold);
+    font-size: 1.8rem;
+    color: var(--cor-preta);
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    line-height: 1.2;
+    margin: 30px 0;
+    display: none;
+}
+
+
+.headline h2 span {
+    color: var(--cor-vermelha);
+}
+
+
+.headline h3 {
+    font-family: var(--regular);
+    font-size: 1.2rem;
+    color: #505050;
+    display: none;
+}
+
+
+.video-vsl {
+    background: #ffffff;
+    clear: both;
+    display: block;
+    margin: 0 auto;
+    padding: 30px 0 0 0;
+    width: 30%;
+}
+
+
+/* Responsivo */
+@media screen and (max-width: 1000px) {
+
+
+    .headline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0 50px 0;
+        width: 100%;
+        display: none;
+    }
+    
+    
+    .headline img {
+        max-width: 35%;
+        height: auto;
+        margin: 20px 0 0;
+        display: none;
+    }
+    
+    .headline h2 {
+        font-family: var(--regular);
+        font-size: 24px;
+        color: var(--cor-preta);
+        width: 100%;
+        max-width: 90%;
+        text-align: center;
+        line-height: 1.2;
+        margin: 30px 0;
+        letter-spacing: normal;
+        text-transform: none;
+        display: none;
+    }
+    
+    
+    .headline h2 span {
+        color: var(--cor-vermelha);
+        font-family: var(--bold);
+        display: none;
+
+    }
+    
+    
+    .headline h3 {
+        font-family: var(--regular);
+        font-size: 16px;
+        color: #505050;
+        margin: 0 0 -25px 0;
+        display: none;
+    }
+    
+    
+    .video-vsl {
+        background: #ffffff;
+        clear: both;
+        display: block;
+        margin: 0 auto;
+        width: 92%;
+        padding: 50px 0 0 0;
+    }
+
+}
