@@ -16,6 +16,54 @@
     <link rel="dns-prefetch" href="https://api.vturb.com.br">
     <!-- Fim Tubo Vturb-->
 
+    <!--Delay Vturb-->
+    <style>.esconder { display: none }</style>
+
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+/* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+var SECONDS_TO_DISPLAY = 10;
+var CLASS_TO_DISPLAY = ".esconder";
+
+/* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+var attempts = 0;
+var elsHiddenList = [];
+var elsDisplayed = false;
+var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+
+setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+
+var showHiddenElements = function () {
+elsDisplayed = true;
+elsHiddenList.forEach((e) => e.style.display = "block");
+localStorage.setItem(alreadyDisplayedKey, true)
+}
+
+var startWatchVideoProgress = function () {
+if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+if (attempts >= 10) return;
+attempts += 1;
+return setTimeout(function () { startWatchVideoProgress() }, 1000);
+}
+
+smartplayer.instances[0].on('timeupdate', () => {
+if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+showHiddenElements();
+})
+}
+
+if (alreadyElsDisplayed === 'true') {
+setTimeout(function () { showHiddenElements(); }, 100);
+} else {
+startWatchVideoProgress()
+}
+});
+</script>
+<!--End Delay Vturb-->
+
     <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
@@ -46,27 +94,29 @@
 </script>
 <!-- End Google tag (gtag.js) -->
 
+
     <link rel="stylesheet" href="./assets/pages/index/index.css">
 </head>
 <body>
 
-<section class="headline">
-
-  <img src="./files/Robo de Encontros.png">
-
-  <h2>Use agora esse simples Robô no seu celular e Marque até <span>3 encontros</span> por mês!</h2>
-
-  <h3>Assista o vídeo e descubra como!</h3> 
-
-</section>
-
 <div class="video-vsl">
 					
   <!-- Script do Vturb !-->
-  <div id="vid_64a9d957e891af000a1d29dc" style="position:relative;width:100%;padding: 125% 0 0;"><img id="thumb_64a9d957e891af000a1d29dc" src="https://images.converteai.net/4d46c5bc-2f46-4c08-8070-21a320313b4e/players/64a9d957e891af000a1d29dc/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_64a9d957e891af000a1d29dc" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_64a9d957e891af000a1d29dc">var s=document.createElement("script");s.src="https://scripts.converteai.net/4d46c5bc-2f46-4c08-8070-21a320313b4e/players/64a9d957e891af000a1d29dc/player.js",s.async=!0,document.head.appendChild(s);</script>
+  <div id="vid_64ac6de3037324000991b46f" style="position:relative;width:100%;padding: 125% 0 0;"><img id="thumb_64ac6de3037324000991b46f" src="https://images.converteai.net/4d46c5bc-2f46-4c08-8070-21a320313b4e/players/64ac6de3037324000991b46f/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_64ac6de3037324000991b46f" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_64ac6de3037324000991b46f">var s=document.createElement("script");s.src="https://scripts.converteai.net/4d46c5bc-2f46-4c08-8070-21a320313b4e/players/64ac6de3037324000991b46f/player.js",s.async=!0,document.head.appendChild(s);</script>
   <!--End Script do Vturb-->
 
 </div>
+
+  <div class= "esconder">
+
+    <div class="bottton">
+      <a class="comprar" href="https://pay.hotmart.com/X84502390F?checkoutMode=10">Sim, Quero o Robô de Encontros</a>
+      <img src="./files/cartoes-1-e1655575683206.png.webp" class="cartao">
+    </div>
+
+  </div>
+
+
 
 <!--Footer-->
 <footer class="footer">
